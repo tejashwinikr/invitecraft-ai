@@ -10,7 +10,7 @@ export function Footer() {
             <div className="grid h-8 w-8 place-items-center rounded-xl bg-gradient-primary">
               <Sparkles className="h-3.5 w-3.5 text-primary-foreground" />
             </div>
-            <span className="font-display text-xl">InviteCraft AI</span>
+            <span className="font-display text-xl">InviteCraft</span>
           </div>
           <p className="text-sm text-muted-foreground">
             Design beautiful digital invitations in minutes. Powered by AI.
