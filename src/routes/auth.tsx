@@ -68,7 +68,7 @@ function AuthPage() {
             <div className="grid h-9 w-9 place-items-center rounded-xl bg-gradient-primary shadow-glow">
               <Sparkles className="h-4 w-4 text-primary-foreground" />
             </div>
-            <span className="font-display text-2xl">InviteCraft AI</span>
+            <span className="font-display text-2xl">InviteCraft</span>
           </Link>
 
           <Card className="rounded-3xl border-border/60 p-7 shadow-card">
