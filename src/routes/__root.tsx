@@ -57,7 +57,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "InviteCraft AI — Design beautiful digital invitations" },
+      { title: "InviteCraft — Design beautiful digital invitations" },
       { name: "description", content: "Create elegant digital invitation cards in minutes. Pick a template, customize, share — powered by AI." },
       { property: "og:title", content: "InviteCraft AI" },
       { property: "og:description", content: "Design beautiful digital invitations in minutes." },
