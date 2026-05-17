@@ -23,7 +23,7 @@ function SharePage() {
       <header className="container mx-auto flex items-center justify-between px-4 py-6">
         <Link to="/" className="flex items-center gap-2">
           <div className="grid h-8 w-8 place-items-center rounded-xl bg-gradient-primary"><Sparkles className="h-3.5 w-3.5 text-primary-foreground" /></div>
-          <span className="font-display text-xl">InviteCraft AI</span>
+          <span className="font-display text-xl">InviteCraft</span>
         </Link>
         <Button asChild variant="outline" size="sm" className="rounded-full"><Link to="/">Create your own</Link></Button>
       </header>
