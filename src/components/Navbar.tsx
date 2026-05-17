@@ -17,8 +17,8 @@ export function Navbar() {
             <Sparkles className="h-4 w-4 text-primary-foreground" />
           </div>
           <span className="font-display text-2xl tracking-tight">InviteCraft</span>
-          <span className="rounded-full bg-accent px-2 py-0.5 text-[10px] font-semibold text-accent-foreground">AI</span>
-        </Link>
+          {/* <span className="rounded-full bg-accent px-2 py-0.5 text-[10px] font-semibold text-accent-foreground">AI</span>
+        </Link> */}
 
         <nav className="hidden items-center gap-8 md:flex">
           <Link to="/" className="text-sm text-muted-foreground transition-colors hover:text-foreground">Home</Link>
