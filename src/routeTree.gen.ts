@@ -10,12 +10,20 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as DashboardRouteImport } from './routes/dashboard'
+import { Route as CreateRouteImport } from './routes/create'
 import { Route as AuthRouteImport } from './routes/auth'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as PreviewIdRouteImport } from './routes/preview.$id'
+import { Route as ISlugRouteImport } from './routes/i.$slug'
 
 const DashboardRoute = DashboardRouteImport.update({
   id: '/dashboard',
   path: '/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CreateRoute = CreateRouteImport.update({
+  id: '/create',
+  path: '/create',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AuthRoute = AuthRouteImport.update({
@@ -28,35 +36,70 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PreviewIdRoute = PreviewIdRouteImport.update({
+  id: '/preview/$id',
+  path: '/preview/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ISlugRoute = ISlugRouteImport.update({
+  id: '/i/$slug',
+  path: '/i/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/auth': typeof AuthRoute
+  '/create': typeof CreateRoute
   '/dashboard': typeof DashboardRoute
+  '/i/$slug': typeof ISlugRoute
+  '/preview/$id': typeof PreviewIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/auth': typeof AuthRoute
+  '/create': typeof CreateRoute
   '/dashboard': typeof DashboardRoute
+  '/i/$slug': typeof ISlugRoute
+  '/preview/$id': typeof PreviewIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/auth': typeof AuthRoute
+  '/create': typeof CreateRoute
   '/dashboard': typeof DashboardRoute
+  '/i/$slug': typeof ISlugRoute
+  '/preview/$id': typeof PreviewIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/auth' | '/dashboard'
+  fullPaths:
+    | '/'
+    | '/auth'
+    | '/create'
+    | '/dashboard'
+    | '/i/$slug'
+    | '/preview/$id'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/auth' | '/dashboard'
-  id: '__root__' | '/' | '/auth' | '/dashboard'
+  to: '/' | '/auth' | '/create' | '/dashboard' | '/i/$slug' | '/preview/$id'
+  id:
+    | '__root__'
+    | '/'
+    | '/auth'
+    | '/create'
+    | '/dashboard'
+    | '/i/$slug'
+    | '/preview/$id'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AuthRoute: typeof AuthRoute
+  CreateRoute: typeof CreateRoute
   DashboardRoute: typeof DashboardRoute
+  ISlugRoute: typeof ISlugRoute
+  PreviewIdRoute: typeof PreviewIdRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -66,6 +109,13 @@ declare module '@tanstack/react-router' {
       path: '/dashboard'
       fullPath: '/dashboard'
       preLoaderRoute: typeof DashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/create': {
+      id: '/create'
+      path: '/create'
+      fullPath: '/create'
+      preLoaderRoute: typeof CreateRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/auth': {
@@ -82,13 +132,30 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/preview/$id': {
+      id: '/preview/$id'
+      path: '/preview/$id'
+      fullPath: '/preview/$id'
+      preLoaderRoute: typeof PreviewIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/i/$slug': {
+      id: '/i/$slug'
+      path: '/i/$slug'
+      fullPath: '/i/$slug'
+      preLoaderRoute: typeof ISlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AuthRoute: AuthRoute,
+  CreateRoute: CreateRoute,
   DashboardRoute: DashboardRoute,
+  ISlugRoute: ISlugRoute,
+  PreviewIdRoute: PreviewIdRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
