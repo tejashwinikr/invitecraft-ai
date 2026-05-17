@@ -31,10 +31,10 @@ function Landing() {
             transition={{ duration: 0.7 }}
             className="md:col-span-7"
           >
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-card/70 px-3 py-1 text-xs backdrop-blur">
+            {/* <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-card/70 px-3 py-1 text-xs backdrop-blur">
               <Sparkles className="h-3 w-3 text-primary" />
               <span className="text-muted-foreground">AI-powered invitation design</span>
-            </div>
+            </div> */}
             <h1 className="font-display text-5xl leading-[1.02] tracking-tight sm:text-6xl md:text-7xl">
               Invitations that
               <br />
